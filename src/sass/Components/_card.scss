@@ -1,0 +1,234 @@
+.card {
+    //FUNCTIONALITY
+    perspective: 150rem;
+    -moz-perspective: 150rem;     /// looks like card is moving towards you
+    height: 50rem;              // this solves the problem with collapsed height caused by position:absolute   2
+    position: relative;
+    // @include clearfix;     // cant help beacause the problem caused by position:absolute
+
+
+    &_side {
+        
+        height: 50rem;              // has its height because we want it look like a card  1
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0 ;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: .5rem ;
+        box-shadow: $shadow_1;
+        overflow: hidden;          // when the child item overflow the parent/ Here it's background image 
+      
+       
+    }
+    &_side--front  {
+        background-color:$color_pure_white;
+    }
+  
+    &_side--back {
+        &-1 {
+            background-image: linear-gradient( to right bottom, rgba($color_secondaryy_light, 0.8),  rgba($color_secondary_dark, 0.8)),;
+        }
+
+        &-2 {
+            background-image: linear-gradient( to right bottom, rgba($color_light_green, 0.8),  rgba($color_dark_green, 0.8)),;
+        }
+
+        &-3 {
+            background-image: linear-gradient( to right bottom, rgba($color_tertialy_light, 0.8),  rgba($color_tertialy_dark, 0.8)),;
+        }
+        
+        transform: rotateY(180deg);
+    }
+
+    &:hover &_side--front { // card:hover the trasform will be applied on card_side--front 
+        transform: rotateY(-180deg); 
+    }
+
+    &:hover &_side--back { // card:hover the trasform 0 will be applied on card_side--back because it is already rotated for 180 deg and we have to rotate it back to 0
+        transform: rotateY(0);
+    }
+
+    
+    // FRONT SIDE STYLING 
+    &_picture {
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: screen;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+
+        &--1 {
+            background-image: linear-gradient( to right bottom, rgba($color_secondaryy_light, 0.8),  rgba($color_secondary_dark, 0.8)), url(../images/nat-5.jpg);
+        }
+        &--2 {
+            background-image: linear-gradient( to right bottom, rgba($color_light_green, 0.8),  rgba($color_dark_green, 0.8)), url(../images/nat-6.jpg);
+        }
+        &--3 {
+            background-image:linear-gradient( to right bottom, rgba($color_tertialy_light, 0.8),  rgba($color_tertialy_dark, 0.8)), url(../images/nat-7.jpg);
+        }
+    }
+    &_heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        color: $color_pure_white;
+        text-transform: uppercase;
+        text-align: right;
+        position: absolute;
+        top: 13rem;
+        left: 5rem;
+
+        width: 75%;
+
+    }
+    &_heading-span {
+        padding: 1rem 1rem;
+        -webkit-box-decoration-break: clone;  
+        box-decoration-break: clone;
+        &--1 {
+            background-image: linear-gradient( to right bottom, 
+            rgba($color_secondaryy_light, .6), 
+            rgba($color_secondary_dark, .6) );
+        }
+        &--2 {
+            background-image: linear-gradient( to right bottom, 
+            rgba($color_light_green, .6), 
+            rgba($color_dark_green, .6) );
+        }
+        &--3 {
+            background-image: linear-gradient( to right bottom, 
+            rgba($color_tertialy_light, .6), 
+            rgba($color_tertialy_dark, .6) );
+        }
+    }
+
+    &__details{
+        padding: 1rem;
+        ul {
+            list-style: none;
+            width: 60%;
+            margin: 0rem  auto; 
+
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: .8rem ;
+
+                &:not(:last-child) {
+                    border-bottom: solid 1px $color_gray_light_darker;
+                }
+            }
+        }
+    }
+
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        // margin: auto auto;
+        width: 90%;
+        text-align: center;
+
+        
+    }
+
+    &__price-box {
+        color: $color_pure_white;
+        text-align: center;
+        margin-bottom: 8rem;
+    }
+
+    &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &__pice-value {
+        font-size: 6rem;
+        font-weight: 100;
+
+    }
+
+
+    @include respond(tabl-port ) {
+
+        
+        height: auto;              // this solves the problem with collapsed height caused by position:absolute   2
+        border-radius: .5rem ;
+        box-shadow: $shadow_1;
+        background-color:$color_pure_white ;
+    
+        &_side {
+            box-shadow: none;
+            height:auto;              // has its height because we want it look like a card  1
+            position: relative;
+            width: 100%;
+            backface-visibility: hidden;
+            overflow: hidden;          // when the child item overflow the parent/ Here it's background image 
+            border-radius: 0;
+           
+        }
+    
+      
+        &_side--back {
+     
+            transform: rotateY(0);
+           
+            -webkit-clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+    
+        &:hover &_side--front { // card:hover the trasform will be applied on card_side--front 
+            transform: rotateY(0deg); 
+        }
+        
+
+        &__cta {
+            position: relative;
+            top: 0;
+            left:0;
+            transform: translate(0);
+            padding: 10rem 3rem 5rem 3rem;
+            width: 100%;
+            color: $color_pure_white;
+    
+            
+        }
+    
+        &__price-box {
+           
+            text-align: center;
+            padding:  0rem 3rem 0rem 3rem;
+            margin-bottom: 5rem;
+        }
+        
+        &__price-only {
+            font-size: 1.6rem;
+           
+        }
+           
+        &__pice-value {
+            font-size: 6rem;
+    
+        }
+
+       
+    }
+
+    @include respond(phone) {
+
+         &__cta {
+
+            padding: 7rem 3rem 5rem 3rem;
+        }
+
+        &__price-box {
+           
+              padding:  1.5rem 3rem 0rem 3rem;
+        }
+       
+    }
+}

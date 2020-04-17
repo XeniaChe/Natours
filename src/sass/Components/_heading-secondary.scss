@@ -1,0 +1,27 @@
+.heading-secondary {
+    display: inline-block;
+    font-size: 3.5rem;
+   text-transform: uppercase;
+   font-weight: 700;
+   background-image: linear-gradient(to right, $color_light_green, $color_dark_green);
+   background-clip: text;
+   -webkit-background-clip: text;
+   letter-spacing: 3px;
+   color: transparent;                                                                        // to hide the text 
+   transition: all .2s;
+
+   @include respond(tabl-port) {
+    font-size: 3.0rem;
+    letter-spacing: 0.8rem;
+    } 
+   @include respond(phone) {
+    font-size: 2.0rem;
+    letter-spacing: 0.5rem;
+    } 
+
+
+  &:hover {
+      transform: skewX(20deg) skewY(5deg);
+      text-shadow: 0rem 1rem 1rem rgba( $color_gray, .4) ;
+  }
+}

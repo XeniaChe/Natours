@@ -1,0 +1,69 @@
+.header {
+    position: relative;   //for .logo-box which position is set to absolute
+    height: 95vh;    //90% of the viewport//
+    background-image:
+     linear-gradient( to right bottom,
+     rgba($color_light_green, 0.8), 
+      rgba($color_dark_green, 0.8)),
+     url('../images/hero-small.jpg');                                                                              // PATH TO BUILD/IMAGES!!!     
+    background-size: cover; 
+    background-position: top;
+                      
+    @media (min-resolution: 192dpi) and (min-width: 600px),
+    (min-width: 2000px) {
+        background-image:
+        linear-gradient( to right bottom,
+        rgba($color_light_green, 0.8), 
+        rgba($color_dark_green, 0.8)),
+         url('../images/hero.jpg');    
+    }
+
+    
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+     @include respond(tabl-port) {
+         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+             }
+
+    @include respond(phone) {
+         -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            height: 85vh;
+        }
+
+        @include respond(phone-small) {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            height: 75vh;           
+        }    
+    
+
+    &__logo-box {
+        position: absolute;
+        top: 5rem;
+        left: 5rem;
+    
+        backface-visibility: hidden; 
+        
+    
+    }
+    &__logo {
+        height: 4rem;
+        // &:hover {
+        //     animation-name: moveLeft_logo;
+        //     animation-duration: 0.7s;
+        //     animation-timing-function: ease-in;
+        // }
+       }
+    &__text-box {
+        position: absolute;
+        top: 37%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    
+    }
+
+}

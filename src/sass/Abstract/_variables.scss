@@ -1,0 +1,44 @@
+
+///Colors
+$color_light_green: rgb(18, 196, 77);       
+$color_dark_green: #0b8d16;
+$color_gray: rgb(102, 102, 102);
+// $color_dark_red: #B40404;      
+// $color_light_red:#FA5858;   
+$color_light_blue: #81BEF7;   
+$color_black: #151515;
+$color_pure_white: #ffff;
+
+$color_secondaryy_light: #f39c12;
+$color_secondary_dark:#d35400;
+
+$color_tertialy_dark: #2E4172;
+$color_tertialy_light: #A8B3CC;
+
+$color_gray_light_1: #f7f7f7;
+$color_gray_light_darker: #a8a8a8;
+$color_gray_light_darker2: #555555;
+$color_gray_light_darker3: #252525;
+
+
+// Fonts
+$font_size_big: 14rem; 
+$default_font_size: 1.6rem;
+
+///Grid variables 
+$grid_width : 114rem;
+$vertical_gatter: 8rem;
+$vertical_gatter_small: 6rem;
+$horizontal_gatter:6rem;
+
+
+// shadows
+$shadow_1:  0 1.5rem 4rem rgba($color_black, 0.2);
+$shadow_2:  0 1.5rem 4rem rgba($color_black, 0.8);
+$shadow_3:  0 1.5rem 2rem rgba($color_black, 0.3);
+
+
+
+// BORDER RADIUS    
+$border_radius: .5rem ;  
+$border_radius_small: .2rem ;  

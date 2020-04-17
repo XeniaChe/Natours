@@ -1,0 +1,115 @@
+
+.btn {
+    &,
+    &:link, 
+    &:visited {
+        
+        text-decoration: none;
+        text-transform: uppercase;
+        display: inline-block;   //  in .text-box  add text-align: center;  to CENTER THE TEXT of the inline_block el-t;  !!!!!
+        border-radius: 10rem;
+        padding: 1.5rem 4rem;
+        box-shadow: 0 1rem 2rem rgba($color_black, 0.2);   // box-shadow: x y blur rgba; 
+        transition: all   0.8s;
+
+        position: relative;  // to hide the additional button with position:absolute; behind it 
+        font-size: 1.6rem;
+
+        // CHANGES FOR BUTTON EL-T  
+        border: none;
+        cursor: pointer;
+        
+    }
+
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        &::after {
+            transform: scaleX(1.4) scaleY(1.3);
+            opacity: 0;
+        }
+    }
+
+
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-0.1rem);
+        box-shadow: 0 .5rem 1rem rgba($color_black, 0.4);   // box-shadow  less blured in active state
+    }
+
+    
+    // addinf aditional hidden btn behind using ::AFTER
+   &::after {
+        display: inline-block;   //!!!important MUST HAVE   
+        content: " ";             //!!!important MUST HAVE  
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        
+        position: absolute ;   // add .btn position:relative  
+        top: 0;        // 0 px according to .btn with position:relative
+        left: 0rem;
+        z-index: -1;  //!!!important
+        transition: all .3s;
+    }
+
+    &--white{
+        font-size: 2.5rem;
+        background-color: $color_pure_white;
+        color: $color_gray;
+
+        &::after {
+            background-color: $color_pure_white;
+        }
+    }
+
+   
+    &--green { 
+        padding: 1.5rem 4rem;
+        font-size: 1.6rem;
+        background-color: $color_light_green;
+        color: $color_pure_white;
+        
+        &::after {
+            background-color: $color_light_green;
+        }
+    }
+
+    &--animated {   // animation: moveBotton 2s  fill-mode;
+        
+        animation-name: moveBotton;
+        animation-duration: 1s;
+        animation-fill-mode: forwards ;
+        animation-timing-function: ease-in-out;
+        animation-delay: 0.35s;
+        animation-fill-mode: backwards;   // to hide el-t before the animation starts
+
+    }
+  
+}
+.btn-text {
+    &:link, 
+    &:visited {
+        font-size: $default_font_size;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom:  1px  solid $color_light_green;
+        padding: 3px;
+        color: $color_light_green;
+
+        transition: all .2s;             // add ANIMATION  to :hover (UP) "active(DOWN)
+
+    }
+    &:hover {
+        background-color: $color_light_green;
+        color: $color_gray_light_1;
+        box-shadow: .5rem 1rem 1rem rgba($color_gray, 0.4);
+        transform: translateY(-.8rem);
+    }
+    &:active {
+        box-shadow: .5rem .5rem .6rem rgba($color_gray, 0.4);
+        transform: translateY(0);
+    }
+    
+}

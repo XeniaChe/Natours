@@ -1,0 +1,118 @@
+.section-about {
+background-color: $color_gray_light_1;
+padding: 30rem 0;
+margin-top: -25vh;
+
+
+@include respond(tabl-lands) {
+    padding-bottom: 50rem;          
+}
+
+
+@include respond(phone) {
+    padding-bottom: 25vh;          
+}
+@include respond(phone-small) {
+    padding-bottom: 25vh;          
+}
+
+}
+
+.section-features {
+padding: 20rem 1rem;
+background-image:
+    linear-gradient( to right bottom,rgba($color_light_green, 0.8),  rgba($color_dark_green, 0.8)),
+    url('../images/nat-4.jpg');                                                                              // PATH TO BUILD/IMAGES!!!     
+background-size: cover; 
+background-position: top;
+
+transform: skewY(-7deg);
+
+margin-top: -8vh;
+    & > * {
+        transform: skewY(7deg);     // select DIRECT CHILD el-t
+    }
+
+
+    @include respond(phone) {
+        padding-top: 15vh;          
+    }
+    @include respond(phone-small) {
+        padding-top: 15vh;          
+    }
+}
+
+
+
+
+
+.section-tours {
+    background-color: $color_gray_light_1;
+    padding: 25rem 0;
+    margin-top: -8vh; 
+    text-align: center;
+
+    @include respond(phone) {
+        padding-bottom: 15rem;          
+    }
+    @include respond(phone-small) {
+        padding-bottom: 13rem;          
+    }
+}
+
+.section-stories {
+    position: relative;
+    padding: 10rem 0;
+
+    @include respond(phone-small) {
+        padding-bottom: 8rem;          
+    }
+
+}
+
+.section-book {
+    padding: 10rem 0;
+    background-image: linear-gradient(to right  ,rgba($color_light_green, 0.8),  rgba($color_dark_green, 0.8) );
+    
+}
+
+.book {
+    background-size: cover;
+    background-image: linear-gradient( 105deg,
+            rgba($color_pure_white, .9) 0%,
+            rgba($color_pure_white, .9) 50%,
+           transparent 50%),
+        url('../images/nat-10.jpg');
+    border-radius: $border_radius ;
+    box-shadow: $shadow_1;
+
+    @include respond(tabl-lands ) {
+        background-image: linear-gradient( 105deg,
+            rgba($color_pure_white, .9) 0%,
+            rgba($color_pure_white, .9) 65%,
+           transparent 65%),
+        url('../images/nat-10.jpg');
+    }
+
+
+    @include respond(tabl-port) {
+        background-image: linear-gradient( 105deg,
+            rgba($color_pure_white, .85) 0%,
+            rgba($color_pure_white, .85) 100%,
+           transparent 100%),
+        url('../images/nat-10.jpg');
+    }
+
+    &__form {
+        @include respond(tabl-lands)  {
+            width: 65%;
+        }
+
+
+        @include respond(tabl-port) {
+            width: 100%;
+        }
+        width: 50%;
+        padding: 5rem;
+    }
+}

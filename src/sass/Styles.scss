@@ -1,0 +1,32 @@
+@import "./Abstract/variables"; 
+@import "./Abstract/mixins"; 
+@import "./Abstract/functions"; 
+
+
+@import "./base/base"; 
+@import "./base/_typography"; 
+@import "./base/utilities"; 
+@import "./base/animations"; 
+
+
+@import "./LAyouts/Header";
+@import "./LAyouts/Grid";
+@import "./LAyouts/footer";
+@import "./LAyouts/navigation";
+
+ 
+@import "./Pages/home";
+
+@import "./Components/Button";
+@import "./Components/heading_primary";
+@import "./Components/heading-secondary";
+@import "./Components/composition";
+@import "./Components/feature-box";
+@import "./Components/card";
+@import "./Components/story";
+@import "./Components/bg-video";
+@import "./Components/form";
+@import "./Components/popup";
+
+
+

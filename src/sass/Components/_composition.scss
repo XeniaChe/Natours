@@ -1,0 +1,68 @@
+.composition {
+    position: relative;
+
+    @include respond(tabl-port) {
+        margin-bottom: 10rem;          
+    }
+
+    &__photo {
+        width: 55%;
+        box-shadow: 0 1rem 1rem rgba( $color_gray, .4) ;
+        position: absolute;
+        z-index: 10 ;
+        outline-offset: 2rem;
+
+        @include respond(tabl-port) {
+            float:left;
+            position: relative;    
+            width: 33.333333333%;
+
+         
+        }
+
+        &--p1 {
+            top: -3rem;
+            left:0;
+
+            @include respond(tabl-port) {
+                top:2rem;
+                transform: scale();
+            }
+        }
+        &--p2 {
+            top: 2rem;
+            right:0;
+
+            @include respond(tabl-port) {
+                top:-2rem;
+                transform: scale(1.2);
+            }
+        }
+        &--p3 {
+            top: 15rem;
+            left: 7rem;
+
+            @include respond(tabl-port) {
+                top:3.5rem;
+                left:0;
+                transform: scale(1.1);
+            }
+        }
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0.5rem 2rem 4rem rgba( $color_gray, .7); 
+            z-index: 20;
+            outline: 1.0rem solid rgba(  $color_dark_green, .8);
+        }
+        
+    }
+    &:hover &__photo:not(:hover) {
+        transform: scale(0.7);
+
+        @include respond(tabl-port) {
+            transform: scale(.9);
+        }
+
+    }
+    // composition:hover composition__photo SELECT  not :hover {
+}

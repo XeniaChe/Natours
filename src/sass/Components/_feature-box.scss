@@ -1,0 +1,28 @@
+.feature-box {
+ background-color: rgba($color_pure_white, .8);
+ font-size: 1.5rem;                                   // Paragraf inside will inherite this font-size: ;
+ padding: 2rem;
+ text-align: center;
+ border-radius: .2rem;
+ box-shadow: 2rem 1rem 4rem  rgba($color_black, .2) ;
+  transition: transform  .2s;
+
+ 
+    &_icon {
+        font-size: 6rem;
+        margin: 2rem;
+        background-image: linear-gradient(to right, $color_light_green, $color_dark_green);
+        display: inline-block;                                                                    // !!!IMPORTANT
+        background-clip:text;
+        -webkit-background-clip: text;
+        // letter-spacing: 3px;
+        color: transparent;                                                                        // to hide the text 
+        
+    }
+
+    &:hover {
+        transform: translateY(-2.5rem) scale(1.1);
+    }
+    
+}
+
